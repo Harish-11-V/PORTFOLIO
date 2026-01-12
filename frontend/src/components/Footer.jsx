@@ -23,7 +23,7 @@ const Footer = () => {
     },
     { 
       icon: FiMail, 
-      url: 'mailto:231501057@rajalakshmi.edu.in', 
+      url: 'mailto:harishkumar11v@gmail.com', 
       label: 'Email',
       color: 'hover:text-purple-400'
     },

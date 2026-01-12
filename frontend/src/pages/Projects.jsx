@@ -28,30 +28,41 @@ const Projects = () => {
   const sampleProjects = [
     {
       _id: '1',
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      githubUrl: 'https://github.com/harishkumar/ecommerce',
-      liveUrl: 'https://ecommerce-demo.com',
+      title: 'Full-Stack OD Approval Application',
+      description: 'Built a digital platform to revolutionize OD leave management in institutions by automating request & approval workflows including student leave submission and faculty verification. Achieved 70% faster processing, 60% improved faculty efficiency & 90% accuracy in student submissions, ensuring transparency.',
+      technologies: ['React.js', 'MongoDB', 'Node.js', 'HTML', 'CSS', 'JavaScript'],
+      githubUrl: 'https://github.com/Harish-11-V',
+      liveUrl: '',
       category: 'fullstack',
       featured: true,
     },
     {
       _id: '2',
-      title: 'Social Media Dashboard',
-      description: 'Analytics dashboard for social media management with real-time data visualization and scheduling.',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'Firebase'],
-      githubUrl: 'https://github.com/harishkumar/social-dashboard',
-      liveUrl: 'https://social-dashboard-demo.com',
-      category: 'frontend',
+      title: 'EduMate-AI Powered Adaptive Learning Platform',
+      description: 'Developed an adaptive learning platform for personalized education and skill enhancement. Used Python, TensorFlow for AI-driven content recommendations (80% better matching). Integrated Twilio notifications, AI chatbots for 70% faster responses. 60% faster task completion with interactive interface.',
+      technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'React', 'PostgreSQL', 'MongoDB'],
+      githubUrl: 'https://github.com/Harish-11-V',
+      liveUrl: '',
+      category: 'fullstack',
       featured: true,
     },
     {
       _id: '3',
-      title: 'Task Management API',
-      description: 'RESTful API for task management with JWT authentication, role-based access control, and real-time notifications.',
-      technologies: ['Express', 'PostgreSQL', 'Socket.io', 'Redis'],
-      githubUrl: 'https://github.com/harishkumar/task-api',
+      title: 'Pneumonia Detection With VIT Model & MC Dropout',
+      description: 'Developed a deep learning framework using ViT, Monte Carlo Dropout, and Active Learning for automated pneumonia diagnosis from chest X-rays. Achieved 94.1% accuracy, 96% sensitivity, and 0.98 AUC, outperforming ResNet-50. 85% prediction confidence with reduced labeling effort & ensuring reliable classification models.',
+      technologies: ['Python', 'PyTorch', 'ViT', 'OpenCV', 'MC Dropout'],
+      githubUrl: 'https://github.com/Harish-11-V',
+      liveUrl: '',
+      category: 'backend',
+      featured: true,
+    },
+    {
+      _id: '4',
+      title: 'Smart Home Monitoring',
+      description: 'Developed a smart home system with real-time sensor data visualization on a dashboard using cloud platforms (Blynk, ThingSpeak, Arduino Cloud) & communication protocols (UART, SPI, I2C). Enabled remote monitoring, safety alerts, and wireless control, achieving 65% improvement in monitoring efficiency, and 57% better system responsiveness.',
+      technologies: ['Arduino', 'ESP32s66', 'Blynk Cloud', 'ThingSpeak', 'IoT'],
+      githubUrl: 'https://github.com/Harish-11-V',
+      liveUrl: '',
       category: 'backend',
       featured: false,
     },
@@ -115,21 +126,27 @@ const Projects = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="flex justify-center space-x-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <motion.button
               key={category}
               onClick={() => setFilter(category)}
-              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
+              className={`group relative px-6 py-3 rounded-xl font-medium transition-all duration-300 overflow-hidden ${
                 filter === category
-                  ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
-                  : 'glass text-gray-300 hover:text-white'
+                  ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/50'
+                  : 'glass-interactive text-gray-300'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              <span className="relative z-10">{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+              {filter !== category && (
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
             </motion.button>
           ))}
         </motion.div>
@@ -140,65 +157,88 @@ const Projects = () => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project._id}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="glass rounded-xl p-6 group"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="card-interactive relative overflow-hidden"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {project.featured && (
-                <div className="flex items-center space-x-2 mb-4">
-                  <FiTag className="w-4 h-4 text-primary-400" />
-                  <span className="text-sm text-primary-400 font-medium">Featured</span>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              
+              <div className="relative z-10">
+                {project.featured && (
+                  <motion.div 
+                    className="flex items-center space-x-2 mb-4"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: index * 0.1 + 0.3, type: 'spring' }}
+                  >
+                    <div className="relative">
+                      <FiTag className="w-4 h-4 text-purple-400 animate-pulse" />
+                      <span className="absolute inset-0 animate-ping">
+                        <FiTag className="w-4 h-4 text-purple-400 opacity-50" />
+                      </span>
+                    </div>
+                    <span className="text-sm font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Featured</span>
+                  </motion.div>
+                )}
+
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-4 line-clamp-3 group-hover:text-gray-300 transition-colors">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, techIndex) => (
+                    <motion.span
+                      key={techIndex}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: index * 0.1 + techIndex * 0.05 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="px-3 py-1 text-xs rounded-lg bg-gradient-to-r from-purple-500/10 to-cyan-500/10 text-purple-300 border border-purple-500/20 hover:border-purple-400/40 transition-all cursor-default"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
                 </div>
-              )}
 
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary-400 transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-gray-400 mb-4 line-clamp-3">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 text-xs rounded-full bg-primary-500/10 text-primary-300 border border-primary-500/20"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex space-x-4">
-                {project.githubUrl && (
-                  <motion.a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <FiGithub className="w-5 h-5" />
-                    <span className="text-sm">Code</span>
-                  </motion.a>
-                )}
-                {project.liveUrl && (
-                  <motion.a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-primary-400 transition-colors"
-                  >
-                    <FiExternalLink className="w-5 h-5" />
-                    <span className="text-sm">Live Demo</span>
-                  </motion.a>
-                )}
+                <div className="flex space-x-4">
+                  {project.githubUrl && (
+                    <motion.a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1, x: -3 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="flex items-center space-x-2 text-gray-400 hover:text-white transition-all group/link"
+                    >
+                      <FiGithub className="w-5 h-5 group-hover/link:rotate-12 transition-transform" />
+                      <span className="text-sm font-medium">Code</span>
+                    </motion.a>
+                  )}
+                  {project.liveUrl && (
+                    <motion.a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1, x: 3 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="flex items-center space-x-2 text-gray-400 hover:text-purple-400 transition-all group/link"
+                    >
+                      <FiExternalLink className="w-5 h-5 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                      <span className="text-sm font-medium">Live Demo</span>
+                    </motion.a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

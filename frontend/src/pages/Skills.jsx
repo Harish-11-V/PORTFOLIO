@@ -24,14 +24,20 @@ const Skills = () => {
   };
 
   const sampleSkills = [
-    { _id: '1', name: 'React.js', category: 'Frontend Development', proficiency: 95 },
-    { _id: '2', name: 'JavaScript', category: 'Frontend Development', proficiency: 90 },
-    { _id: '3', name: 'TypeScript', category: 'Frontend Development', proficiency: 85 },
-    { _id: '4', name: 'HTML & CSS', category: 'Frontend Development', proficiency: 95 },
-    { _id: '5', name: 'Node.js', category: 'Backend Development', proficiency: 85 },
-    { _id: '6', name: 'Express', category: 'Backend Development', proficiency: 80 },
-    { _id: '7', name: 'Firebase', category: 'Backend Development', proficiency: 80 },
-    { _id: '8', name: 'REST APIs', category: 'Backend Development', proficiency: 90 },
+    { _id: '1', name: 'React.js', category: 'Frontend Development', proficiency: 90 },
+    { _id: '2', name: 'JavaScript', category: 'Frontend Development', proficiency: 88 },
+    { _id: '3', name: 'HTML & CSS', category: 'Frontend Development', proficiency: 92 },
+    { _id: '4', name: 'Python', category: 'Frontend Development', proficiency: 90 },
+    { _id: '5', name: 'Java', category: 'Frontend Development', proficiency: 85 },
+    { _id: '6', name: 'C Programming', category: 'Frontend Development', proficiency: 82 },
+    { _id: '7', name: 'Node.js', category: 'Backend Development', proficiency: 85 },
+    { _id: '8', name: 'MongoDB', category: 'Backend Development', proficiency: 88 },
+    { _id: '9', name: 'MySQL', category: 'Backend Development', proficiency: 80 },
+    { _id: '10', name: 'Git & GitHub', category: 'Backend Development', proficiency: 87 },
+    { _id: '11', name: 'TensorFlow', category: 'Backend Development', proficiency: 83 },
+    { _id: '12', name: 'PyTorch', category: 'Backend Development', proficiency: 82 },
+    { _id: '13', name: 'Arduino & IoT', category: 'Backend Development', proficiency: 78 },
+    { _id: '14', name: 'OpenCV', category: 'Backend Development', proficiency: 80 },
   ];
 
   const frontendSkills = skills.filter(s => 
@@ -153,7 +159,8 @@ const SkillBar = ({ skill, index }) => {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative bg-gray-900/90 backdrop-blur-xl border border-gray-800/60 rounded-2xl p-6 hover:border-primary-500/30 transition-all duration-300"
+      whileHover={{ scale: 1.02 }}
+      className="group relative bg-gray-900/90 backdrop-blur-xl border border-gray-800/60 rounded-2xl p-6 hover:border-purple-500/40 transition-all duration-300 cursor-pointer overflow-hidden"
       style={{
         backgroundColor: 'rgba(15, 15, 25, 0.85)',
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
@@ -162,17 +169,36 @@ const SkillBar = ({ skill, index }) => {
       }}
     >
       {/* Background gradient blur effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 via-transparent to-cyan-900/15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 via-transparent to-cyan-900/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Shimmer effect on hover */}
+      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      
+      {/* Left gradient border */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-purple-600 to-cyan-500 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <div className="relative z-10">
-        <div className="flex justify-between items-center mb-3">
-          <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-          <span className="text-sm text-gray-400 font-medium">{skill.proficiency}%</span>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
+            {skill.name}
+          </h3>
+          <motion.span 
+            className="text-sm font-bold text-purple-400"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: index * 0.1 + 0.5, type: 'spring' }}
+          >
+            {skill.proficiency}%
+          </motion.span>
         </div>
         
-        <div className="relative h-2 bg-gray-800/80 rounded-full overflow-hidden">
+        <div className="relative h-2.5 bg-gray-800/80 rounded-full overflow-hidden">
+          {/* Background glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 animate-pulse" />
+          
+          {/* Progress bar */}
           <motion.div
-            className="absolute h-full rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-400"
+            className="relative h-full rounded-full bg-gradient-to-r from-purple-600 via-purple-500 to-cyan-400"
             initial={{ width: 0 }}
             animate={{ width: `${skill.proficiency}%` }}
             transition={{ 
@@ -181,10 +207,36 @@ const SkillBar = ({ skill, index }) => {
               ease: [0.4, 0, 0.2, 1]
             }}
             style={{
-              boxShadow: '0 0 20px rgba(168, 85, 247, 0.4)'
+              boxShadow: '0 0 20px rgba(168, 85, 247, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
             }}
-          />
+          >
+            {/* Animated shine effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+              animate={{
+                x: ['-100%', '200%'],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 1,
+                ease: 'easeInOut',
+              }}
+            />
+          </motion.div>
         </div>
+        
+        {/* Percentage indicator */}
+        <motion.div
+          className="mt-2 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          initial={{ y: 10 }}
+          animate={{ y: 0 }}
+        >
+          <div className="flex items-center gap-1">
+            <div className="flex-1 h-1 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full" style={{ width: `${skill.proficiency}%` }} />
+            <span className="text-xs font-medium text-purple-400">Expert</span>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
