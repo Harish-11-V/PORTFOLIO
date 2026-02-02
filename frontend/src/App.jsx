@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
+import ScrollProgressBar from './components/ScrollProgressBar';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen relative">
+        <ScrollProgressBar />
         <ParticleBackground />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         
