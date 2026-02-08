@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Harish-11-V/DESIGN-THINKING-PROJECT/main/asset/image.gif" width="900" />
-</p>
-
 <h1 align="center">🌐 Portfolio Website</h1>
 <h3 align="center">Full Stack MERN Application</h3>
 
@@ -136,11 +132,15 @@ npm run seed
 npm run dev
 ```
 
-<p align="center"> 🌐 Frontend: <code>http://localhost:5173</code><br/> 🔌 Backend: <code>http://localhost:5000</code><br/> ❤️ Health: <code>http://localhost:5000/health</code> </p>
+<p align="center"> 
+  🌐 Frontend: <code>http://localhost:5173</code><br/> 
+  🔌 Backend: <code>http://localhost:5000</code><br/> 
+  ❤️ Health: <code>http://localhost:5000/health</code> </p>
 
 ---
 
 ## 📁 Project Structure
+
 portfolio-website/
 ├── frontend/
 │   ├── src/
@@ -153,55 +153,46 @@ portfolio-website/
 │   ├── middleware/
 │   └── server.js
 └── package.json
-🔌 API Endpoints
-Projects & Skills
-GET /api/projects
 
-POST /api/projects
+---
 
-GET /api/skills
-
-POST /api/skills
-
-Contact
-POST /api/contact
-
-GET /api/contact
-
-🎨 Customization
+## 🎨 Customization
 Homepage → Home.jsx
 
 Resume Section → Resume.jsx
 
 Social Links → Navbar.jsx, Footer.jsx
 
-Theme Colors (tailwind.config.js)
+Theme Colors (tailwind.config.js):
+
+```bash
 extend: {
   colors: {
     primary: "#0f172a",
     accent: "#38bdf8",
   }
 }
+```
 
 ---
 
 ## 🚢 Deployment
 
-Frontend: Vercel / Netlify
-Backend: Render / Railway / Heroku
-Database: MongoDB Atlas
+• Frontend: Vercel / Netlify
+• Backend: Render / Railway / Heroku
+• Database: MongoDB Atlas
 
 ---
 
 ## 🤝 Contributing
 
-Fork the repository
+• Fork the repository
 
-Create a feature branch
+• Create a feature branch
 
-Commit changes
+• Commit changes
 
-Push & open a Pull Request
+• Push & open a Pull Request
 
 ---
 
@@ -211,7 +202,7 @@ Licensed under the MIT License.
 ---
 
 ## 👨‍💻 Author
-Harish Kumar V
+HARISH KUMAR V
 
 ---
 
