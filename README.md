@@ -1,64 +1,68 @@
-Portfolio Website — Full Stack MERN Application
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Harish-11-V/DESIGN-THINKING-PROJECT/main/asset/image.gif" width="900" />
+</p>
 
-A **modern, interactive portfolio website** built using the **MERN stack**, featuring **glassmorphism UI**, smooth animations, interactive particle effects, and a fully dynamic backend for managing projects, skills, and contact messages.
+<h1 align="center">🌐 Portfolio Website</h1>
+<h3 align="center">Full Stack MERN Application</h3>
+
+<p align="center">
+A <b>modern, interactive portfolio website</b> built using the <b>MERN stack</b>, featuring
+<b>glassmorphism UI</b>, smooth animations, interactive particle effects, and a fully
+<b>dynamic backend</b> for managing projects, skills, and contact messages.
+</p>
 
 ---
 
-## 🖼️ Preview & Badges
+## 🏷️ Badges
 
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge\&logo=react\&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge\&logo=node.js\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-7.0-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-7.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+</p>
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-* 🎨 **Modern UI/UX** – Glassmorphism design with smooth animations using **Framer Motion**
-* 🌌 **Interactive Particle Background** – Custom canvas-based particle system with mouse interaction
-* 📱 **Fully Responsive** – Optimized for desktops, tablets, and mobile devices
-* 🎯 **Dynamic Content Management** – Projects and skills fetched from **MongoDB**
-* 📧 **Contact Form Integration** – Email notifications via **Nodemailer** with validation
-* 🎭 **3D Hover Effects** – Interactive card tilts and depth animations
-* 🚀 **Performance Optimized** – Lazy loading, code splitting, and optimized assets
-* 🔒 **Security Focused** – Helmet.js, rate limiting, and input sanitization
+- 🎨 **Modern UI/UX** — Glassmorphism design with smooth animations using **Framer Motion**
+- 🌌 **Interactive Particle Background** — Canvas-based particles with mouse interaction
+- 📱 **Fully Responsive** — Optimized for desktop, tablet, and mobile
+- 🎯 **Dynamic Content** — Projects & skills fetched from **MongoDB**
+- 📧 **Contact Form Integration** — Secure email handling via **Nodemailer**
+- 🎭 **3D Hover Effects** — Interactive card tilt & depth animations
+- 🚀 **Performance Optimized** — Lazy loading, code splitting & asset optimization
+- 🔒 **Security Focused** — Helmet.js, rate limiting & input validation
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+<h3 align="center">Frontend</h3>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,js,html,css" />
+</p>
+<p align="center">
+  Framer Motion • React Router • Axios • React Icons
+</p>
 
-* **React 18**
-* **Vite**
-* **Tailwind CSS**
-* **Framer Motion**
-* **React Router**
-* **Axios**
-* **React Icons**
-
-### Backend
-
-* **Node.js**
-* **Express.js**
-* **MongoDB**
-* **Mongoose**
-* **Nodemailer**
-* **Express Validator**
-* **Helmet**
-* **Express Rate Limiter**
+<h3 align="center">Backend</h3>
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" />
+</p>
+<p align="center">
+  Mongoose • Nodemailer • Express Validator • Helmet • Rate Limiter
+</p>
 
 ---
 
 ## 📋 Prerequisites
 
-Ensure the following are installed before setup:
-
-* Node.js **v18+**
-* npm or yarn
-* MongoDB (Local or Atlas)
-* Git
+- Node.js **v18+**
+- npm or yarn
+- MongoDB (Local / Atlas)
+- Git
 
 ---
 
@@ -83,19 +87,15 @@ npm run install-all
 
 ### 3️⃣ Environment Configuration
 
-#### Backend (`backend/.env`)
+Backend (backend/.env)
 
-```env
+```bash
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASS=your_app_password
 FRONTEND_URL=http://localhost:5173
-```
-
-#### Frontend (`frontend/.env`)
-
-```env
+Frontend (frontend/.env)
 VITE_API_URL=http://localhost:5000
 ```
 
@@ -103,22 +103,25 @@ VITE_API_URL=http://localhost:5000
 
 ### 4️⃣ Database Setup
 
-#### Option A: MongoDB Atlas (Recommended)
-
-* Create a free cluster (M0)
-* Whitelist your IP
-* Copy the connection string
-* Update `MONGODB_URI` in `.env`
-
-#### Option B: Local MongoDB
-
 ```bash
+MongoDB Atlas (Recommended)
+
+Create a free M0 cluster
+
+Whitelist IP
+
+Copy connection string
+
+Update MONGODB_URI
+
+OR Local MongoDB
+
 mongod
 ```
 
 ---
 
-### 5️⃣ Seed the Database
+## 5️⃣ Seed the Database
 
 ```bash
 cd backend
@@ -127,25 +130,17 @@ npm run seed
 
 ---
 
-### 6️⃣ Run the Application
-
-#### Development Mode
+## 6️⃣ Run the Application
 
 ```bash
 npm run dev
 ```
 
-📍 **Access URLs**
-
-* Frontend: `http://localhost:5173`
-* Backend API: `http://localhost:5000`
-* Health Check: `http://localhost:5000/health`
+<p align="center"> 🌐 Frontend: <code>http://localhost:5173</code><br/> 🔌 Backend: <code>http://localhost:5000</code><br/> ❤️ Health: <code>http://localhost:5000/health</code> </p>
 
 ---
 
 ## 📁 Project Structure
-
-```bash
 portfolio-website/
 ├── frontend/
 │   ├── src/
@@ -158,162 +153,69 @@ portfolio-website/
 │   ├── middleware/
 │   └── server.js
 └── package.json
-```
+🔌 API Endpoints
+Projects & Skills
+GET /api/projects
 
----
+POST /api/projects
 
-## 🔌 API Endpoints
+GET /api/skills
 
-### Projects
+POST /api/skills
 
-* `GET /api/projects`
-* `GET /api/projects/:id`
-* `POST /api/projects`
-* `PUT /api/projects/:id`
-* `DELETE /api/projects/:id`
+Contact
+POST /api/contact
 
-### Skills
+GET /api/contact
 
-* `GET /api/skills`
-* `GET /api/skills/:id`
-* `POST /api/skills`
-* `PUT /api/skills/:id`
-* `DELETE /api/skills/:id`
+🎨 Customization
+Homepage → Home.jsx
 
-### Contact
+Resume Section → Resume.jsx
 
-* `POST /api/contact`
-* `GET /api/contact`
-* `PUT /api/contact/:id/status`
-* `DELETE /api/contact/:id`
+Social Links → Navbar.jsx, Footer.jsx
 
----
-
-## 🎨 Customization
-
-### Personal Information
-
-* **Homepage** → `Home.jsx`
-* **Resume Section** → `Resume.jsx`
-* **Social Links** → `Navbar.jsx`, `Footer.jsx`
-
-### Theme & Colors
-
-Modify `tailwind.config.js`:
-
-```js
-theme: {
-  extend: {
-    colors: {
-      primary: "#0f172a",
-      accent: "#38bdf8",
-    }
+Theme Colors (tailwind.config.js)
+extend: {
+  colors: {
+    primary: "#0f172a",
+    accent: "#38bdf8",
   }
 }
-```
-
----
-
-## 🔐 Email Configuration (Gmail)
-
-1. Enable **2-Step Verification**
-2. Generate **App Password**
-3. Use it as `EMAIL_PASS` in `.env`
 
 ---
 
 ## 🚢 Deployment
 
-### Frontend (Vercel / Netlify)
-
-```bash
-npm run build
-```
-
-Deploy the `dist/` folder.
-
-### Backend (Render / Railway / Heroku)
-
-* Set environment variables
-* Deploy `backend/`
-* Update `VITE_API_URL` with backend URL
-
-### Database
-
-* Use **MongoDB Atlas** for production
-
----
-
-## 🐛 Troubleshooting
-
-* **MongoDB Connection Error** → Check URI & IP whitelist
-* **Port Already in Use** → Change `PORT` in `.env`
-* **CORS Issues** → Ensure `FRONTEND_URL` matches deployed frontend
-
----
-
-## 📝 Scripts
-
-### Root
-
-```bash
-npm run install-all
-npm run dev
-npm run build
-npm run server
-npm run client
-```
-
-### Backend
-
-```bash
-npm start
-npm run dev
-npm run seed
-```
-
-### Frontend
-
-```bash
-npm run dev
-npm run build
-npm run preview
-```
+Frontend: Vercel / Netlify
+Backend: Render / Railway / Heroku
+Database: MongoDB Atlas
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repo
-2. Create a branch (`feature/your-feature`)
-3. Commit changes
-4. Push to GitHub
-5. Open a Pull Request
+Fork the repository
+
+Create a feature branch
+
+Commit changes
+
+Push & open a Pull Request
 
 ---
 
 ## 📄 License
-
-This project is licensed under the **MIT License**.
+Licensed under the MIT License.
 
 ---
 
 ## 👨‍💻 Author
-
-**Harish Kumar V**
-
-* GitHub: [@Harish-11-V](https://github.com/Harish-11-V)
-* LinkedIn: **Harish Kumar V**
-* Email: `harishkumar11v@gmail.com`
+Harish Kumar V
 
 ---
 
-## 🙏 Acknowledgments
-
-* React
-* Tailwind CSS
-* Framer Motion
-* MongoDB
-* Express.js
+<p align="center"> <a href="https://github.com/Harish-11-V">GitHub</a> • <a href="https://www.linkedin.com/in/harish-kumar-v/">LinkedIn</a> • <a href="mailto:harishkumar11v@gmail.com">Email</a> </p>
+<p align="center">
 
 ---
