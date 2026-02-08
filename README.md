@@ -1,4 +1,4 @@
-<h1 align="center">🌐 Portfolio Website</h1>
+<h1 align="center">🌐 PORTFOLIO WEBSITE</h1>
 <h3 align="center">Full Stack MERN Application</h3>
 
 <p align="center">
