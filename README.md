@@ -142,16 +142,27 @@ npm run dev
 ## 📁 Project Structure
 
 portfolio-website/
+
 ├── frontend/
+
 │   ├── src/
+
 │   ├── public/
+
 │   └── vite.config.js
+
 ├── backend/
+
 │   ├── models/
+
 │   ├── routes/
+
 │   ├── controllers/
+
 │   ├── middleware/
+
 │   └── server.js
+
 └── package.json
 
 ---
