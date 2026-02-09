@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiTag } from 'react-icons/fi';
 import axios from 'axios';
+import SkeletonCard from '../components/SkeletonCard';
+import AnimatedSection from '../components/AnimatedSection';
+import GradientBorder from '../components/GradientBorder';
+import ProjectCard from '../components/ProjectCard';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -95,12 +99,22 @@ const Projects = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full"
-        />
+      <div className="min-h-screen py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold font-display mb-4">
+              My <span className="gradient-text">Projects</span>
+            </h1>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Loading amazing projects...
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, index) => (
+              <SkeletonCard key={index} />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
@@ -108,11 +122,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
+        <AnimatedSection direction="down" className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-4">
             My <span className="gradient-text">Projects</span>
           </h1>
@@ -120,7 +130,7 @@ const Projects = () => {
             A collection of my recent work and personal projects showcasing my skills
             and creativity.
           </p>
-        </motion.div>
+        </AnimatedSection>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -155,92 +165,10 @@ const Projects = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project._id}
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="card-interactive relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Gradient border effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-              
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-              
-              <div className="relative z-10">
-                {project.featured && (
-                  <motion.div 
-                    className="flex items-center space-x-2 mb-4"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: index * 0.1 + 0.3, type: 'spring' }}
-                  >
-                    <div className="relative">
-                      <FiTag className="w-4 h-4 text-purple-400 animate-pulse" />
-                      <span className="absolute inset-0 animate-ping">
-                        <FiTag className="w-4 h-4 text-purple-400 opacity-50" />
-                      </span>
-                    </div>
-                    <span className="text-sm font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Featured</span>
-                  </motion.div>
-                )}
-
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-4 line-clamp-3 group-hover:text-gray-300 transition-colors">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <motion.span
-                      key={techIndex}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: index * 0.1 + techIndex * 0.05 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className="px-3 py-1 text-xs rounded-lg bg-gradient-to-r from-purple-500/10 to-cyan-500/10 text-purple-300 border border-purple-500/20 hover:border-purple-400/40 transition-all cursor-default"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-
-                <div className="flex space-x-4">
-                  {project.githubUrl && (
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, x: -3 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="flex items-center space-x-2 text-gray-400 hover:text-white transition-all group/link"
-                    >
-                      <FiGithub className="w-5 h-5 group-hover/link:rotate-12 transition-transform" />
-                      <span className="text-sm font-medium">Code</span>
-                    </motion.a>
-                  )}
-                  {project.liveUrl && (
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, x: 3 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="flex items-center space-x-2 text-gray-400 hover:text-purple-400 transition-all group/link"
-                    >
-                      <FiExternalLink className="w-5 h-5 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                      <span className="text-sm font-medium">Live Demo</span>
-                    </motion.a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
+            <ProjectCard key={project._id} project={project} index={index} />
           ))}
         </motion.div>
 
