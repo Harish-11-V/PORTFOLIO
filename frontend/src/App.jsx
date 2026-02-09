@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
-import ScrollProgressBar from './components/ScrollProgressBar';
+import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
@@ -28,18 +28,19 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen relative">
-        <ScrollProgressBar />
         <ParticleBackground />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         
         <main className="relative z-10">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <PageTransition>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </PageTransition>
         </main>
 
         <Footer />
