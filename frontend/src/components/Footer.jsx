@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiCode } from 'react-icons/fi';
 
 const Footer = () => {
   const socialLinks = [
@@ -16,14 +16,14 @@ const Footer = () => {
       color: 'hover:text-blue-400'
     },
     { 
-      icon: FiTwitter, 
-      url: 'https://twitter.com/harishkumar', 
-      label: 'Twitter',
-      color: 'hover:text-cyan-400'
+      icon: FiCode, 
+      url: 'https://leetcode.com/u/Harish_v_11/', 
+      label: 'LeetCode',
+      color: 'hover:text-orange-400'
     },
     { 
       icon: FiMail, 
-      url: 'mailto:harishkumar11v@gmail.com', 
+      url: 'mailto:231501057@rajalakshmi.edu.in', 
       label: 'Email',
       color: 'hover:text-purple-400'
     },

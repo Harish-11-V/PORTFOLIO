@@ -32,8 +32,8 @@ const Projects = () => {
   const sampleProjects = [
     {
       _id: '1',
-      title: 'Full-Stack OD Approval Application',
-      description: 'Built a digital platform to revolutionize OD leave management in institutions by automating request & approval workflows including student leave submission and faculty verification. Achieved 70% faster processing, 60% improved faculty efficiency & 90% accuracy in student submissions, ensuring transparency.',
+      title: 'EduEase-Interactive OD Approval Application',
+      description: 'Built a digital platform to revolutionize OD leave management in institutions by automating request & approval workflows including student request submission with proof upload, faculty dashboards for approval/rejection, real-time notifications & report generation. Achieved 70% faster processing, 60% improved faculty efficiency & 90% accuracy in student submissions, ensuring transparency.',
       technologies: ['React.js', 'MongoDB', 'Node.js', 'HTML', 'CSS', 'JavaScript'],
       githubUrl: 'https://github.com/Harish-11-V',
       liveUrl: '',
@@ -42,9 +42,9 @@ const Projects = () => {
     },
     {
       _id: '2',
-      title: 'EduMate-AI Powered Adaptive Learning Platform',
-      description: 'Developed an adaptive learning platform for personalized education and skill enhancement. Used Python, TensorFlow for AI-driven content recommendations (80% better matching). Integrated Twilio notifications, AI chatbots for 70% faster responses. 60% faster task completion with interactive interface.',
-      technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'React', 'PostgreSQL', 'MongoDB'],
+      title: 'Gen-AI Material Assistant',
+      description: 'Built a GenAI-powered Material Assistant Automation by a RAG-based LLM/NLP architecture integrated to automate intelligent material selection. Designed a Multi-stage criteria decision-support engine, with AI-driven ranking, real-time dashboards, and an Interactive RAG chatbot for semantic/User prompts reducing manual standards evaluation effort by ~25-30% while improving NPD decision accuracy.',
+      technologies: ['React 18', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Gemini 1.5 Flash', 'LLMs', 'RAG Engine'],
       githubUrl: 'https://github.com/Harish-11-V',
       liveUrl: '',
       category: 'fullstack',
@@ -52,24 +52,24 @@ const Projects = () => {
     },
     {
       _id: '3',
-      title: 'Pneumonia Detection With VIT Model & MC Dropout',
-      description: 'Developed a deep learning framework using ViT, Monte Carlo Dropout, and Active Learning for automated pneumonia diagnosis from chest X-rays. Achieved 94.1% accuracy, 96% sensitivity, and 0.98 AUC, outperforming ResNet-50. 85% prediction confidence with reduced labeling effort & ensuring reliable classification models.',
-      technologies: ['Python', 'PyTorch', 'ViT', 'OpenCV', 'MC Dropout'],
+      title: 'EduMate-AI Powered Adaptive Learning Platform',
+      description: 'Developed an adaptive learning platform for personalized education and skill enhancement. Used Python, TensorFlow for AI-driven recommendations 80% accuracy, OpenCV, WebRTC for real-time feedback 75% engagement improvement, and React for an interactive interface 60% faster task completion. Integrated Twilio notifications, AI chatbots for 70% faster responsiveness.',
+      technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'React', 'PostgreSQL', 'MongoDB'],
       githubUrl: 'https://github.com/Harish-11-V',
       liveUrl: '',
-      category: 'backend',
+      category: 'fullstack',
       featured: true,
     },
     {
       _id: '4',
-      title: 'Smart Home Monitoring',
-      description: 'Developed a smart home system with real-time sensor data visualization on a dashboard using cloud platforms (Blynk, ThingSpeak, Arduino Cloud) & communication protocols (UART, SPI, I2C). Enabled remote monitoring, safety alerts, and wireless control, achieving 65% improvement in monitoring efficiency, and 57% better system responsiveness.',
-      technologies: ['Arduino', 'ESP32s66', 'Blynk Cloud', 'ThingSpeak', 'IoT'],
+      title: 'Pneumonia Detection With ViT Model & MC Dropout',
+      description: 'Developed a deep learning framework using ViT, Monte Carlo Dropout, and Active Learning for automated pneumonia diagnosis from chest X-rays. Achieved 94.1% accuracy, 96% sensitivity, and 0.98 AUC, outperforming ResNet-50, with 85% predictions >90% confidence. Active learning improved performance to 89.26%, reducing labeling effort & ensuring reliable classification models.',
+      technologies: ['Python', 'PyTorch', 'ViT', 'OpenCV', 'MC Dropout'],
       githubUrl: 'https://github.com/Harish-11-V',
       liveUrl: '',
-      category: 'backend',
-      featured: false,
-    },
+      category: 'fullstack',
+      featured: true,
+    }
   ];
 
   const categories = ['all', 'fullstack', 'frontend', 'backend'];

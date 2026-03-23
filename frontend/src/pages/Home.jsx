@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import MagneticButton from '../components/MagneticButton';
 import GlitchText from '../components/GlitchText';
+import Counter from '../components/Counter';
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -108,9 +109,8 @@ const Home = () => {
           variants={itemVariants}
           className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed px-4"
         >
-          A Prefinal year AI & ML student with strong foundations in AI, ML, Frontend Development, IoT and Core Programming. 
-          Actively building projects that solve real-world and socio-impactful problems, blending technical expertise 
-          with End-to-End Development.
+          A Prefinal year Artificial Intelligence and Machine Learning student with strong foundations in AI, ML, Frontend Development, IoT and Core Programming (Java, Python, C). 
+          Actively building projects that solve real-world and socio-impactful problems, blending technical expertise with End-to-End Development. A daily learner with resilient leadership skills which create and inspire a positive change in society.
         </motion.p>
 
         <motion.div
@@ -147,7 +147,8 @@ const Home = () => {
           {[
             { icon: FiGithub, url: 'https://github.com/Harish-11-V', label: 'GitHub', color: 'hover:text-purple-400' },
             { icon: FiLinkedin, url: 'https://www.linkedin.com/in/harish-kumar-v-a412092a2/', label: 'LinkedIn', color: 'hover:text-cyan-400' },
-            { icon: FiMail, url: 'mailto:harishkumar11v@gmail.com', label: 'Email', color: 'hover:text-purple-400' },
+            { icon: FiCode, url: 'https://leetcode.com/u/Harish_v_11/', label: 'LeetCode', color: 'hover:text-orange-400' },
+            { icon: FiMail, url: 'mailto:231501057@rajalakshmi.edu.in', label: 'Email', color: 'hover:text-purple-400' },
           ].map((social, index) => (
             <motion.a
               key={social.label}
@@ -163,6 +164,71 @@ const Home = () => {
               <social.icon className="w-5 h-5 md:w-6 md:h-6" />
             </motion.a>
           ))}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-16 md:mt-20 pt-12 md:pt-16 border-t border-gray-700/50"
+        >
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-300 mb-8 md:mb-10">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+              Achievements at a Glance
+            </span>
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 px-2">
+            <motion.div
+              variants={itemVariants}
+              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors"
+            >
+              <Counter 
+                end={15} 
+                duration={2.5} 
+                suffix="+" 
+                className="text-3xl md:text-4xl font-bold text-purple-400 mb-2"
+              />
+              <p className="text-sm md:text-base text-gray-400">Projects Completed</p>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors"
+            >
+              <Counter 
+                end={20} 
+                duration={2.5} 
+                suffix="+" 
+                className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2"
+              />
+              <p className="text-sm md:text-base text-gray-400">Technologies Mastered</p>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors"
+            >
+              <Counter 
+                end={3} 
+                duration={2} 
+                suffix=" Yrs" 
+                className="text-3xl md:text-4xl font-bold text-purple-400 mb-2"
+              />
+              <p className="text-sm md:text-base text-gray-400">Experience</p>
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors"
+            >
+              <Counter 
+                end={10} 
+                duration={2.5} 
+                suffix="+" 
+                className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2"
+              />
+              <p className="text-sm md:text-base text-gray-400">AI/ML Projects</p>
+            </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </div>
