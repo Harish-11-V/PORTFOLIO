@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiUser, FiMessageSquare, FiSend, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiMail, FiUser, FiMessageSquare, FiSend, FiGithub, FiLinkedin, FiCode, FiPhone } from 'react-icons/fi';
 import axios from 'axios';
 
 const Contact = () => {
@@ -55,14 +55,14 @@ const Contact = () => {
       color: 'hover:text-blue-400',
     },
     {
-      icon: FiTwitter,
-      url: 'https://twitter.com/harishkumar',
-      label: 'Twitter',
-      color: 'hover:text-cyan-400',
+      icon: FiCode,
+      url: 'https://leetcode.com/harish_v_11', // Add actual leetcode profile link since resume just says "HARISH - Leetcode Profile"
+      label: 'LeetCode',
+      color: 'hover:text-orange-400',
     },
     {
       icon: FiMail,
-      url: 'mailto:harishkumar11v@gmail.com',
+      url: 'mailto:231501057@rajalakshmi.edu.in',
       label: 'Email',
       color: 'hover:text-purple-400',
     },
@@ -111,10 +111,28 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-white">Email</h3>
                   <a
-                    href="mailto:harishkumar11v@gmail.com"
+                    href="mailto:231501057@rajalakshmi.edu.in"
                     className="text-gray-400 hover:text-purple-400 transition-colors"
                   >
-                    harishkumar11v@gmail.com
+                    231501057@rajalakshmi.edu.in
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                whileHover={{ scale: 1.02, x: 5 }}
+                className="flex items-center space-x-4 card-interactive p-4"
+              >
+                <div className="p-3 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-lg">
+                  <FiPhone className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white">Phone</h3>
+                  <a
+                    href="tel:+916374304895"
+                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    +91 63743 04895
                   </a>
                 </div>
               </motion.div>

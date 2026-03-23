@@ -4,12 +4,12 @@
 
 @layer base {
   * {
-    @apply border-gray-800;
+    @apply border-white/10;
   }
   
   body {
-    @apply bg-gray-950 text-gray-100 font-sans;
-    @apply overflow-x-hidden;
+    @apply bg-kenesis-darker text-kenesis-accent font-sans antialiased;
+    @apply overflow-x-hidden selection:bg-white/20 selection:text-white;
   }
 
   html {
@@ -18,102 +18,101 @@
 }
 
 @layer components {
-  /* Glass morphism effect */
+  /* Minimal glass effect */
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply bg-white/[0.02] backdrop-blur-md border border-white/[0.05];
   }
 
   .glass-hover {
-    @apply glass hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+    @apply glass hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-500;
   }
 
   .glass-elevated {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;
+    @apply bg-black/60 backdrop-blur-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.8)];
   }
 
   .glass-interactive {
-    @apply glass hover:bg-white/15 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-300;
+    @apply glass hover:bg-white/[0.05] hover:border-white/[0.15] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-500 ease-out;
   }
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-secondary-400 to-primary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent;
   }
 
   .gradient-text-purple {
-    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gray-200 to-gray-500 bg-clip-text text-transparent;
   }
 
   /* Button styles */
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary-500/50;
+    @apply px-8 py-3 bg-white text-black hover:bg-gray-200 font-medium rounded-full transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)];
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105;
+    @apply px-8 py-3 border border-white/20 text-white hover:bg-white/5 font-medium rounded-full transition-all duration-300 transform hover:scale-[1.02];
   }
 
   .btn-glass {
-    @apply px-6 py-3 glass-hover font-semibold rounded-lg transition-all duration-300 hover:scale-105;
+    @apply px-8 py-3 glass-hover font-medium rounded-full transition-all duration-500 hover:scale-[1.02];
   }
 
   /* Card styles */
   .card {
-    @apply glass rounded-xl p-6 transition-all duration-300;
+    @apply glass rounded-2xl p-8 transition-all duration-500;
   }
 
   .card-hover {
-    @apply card hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20;
+    @apply card hover:transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/[0.05];
   }
 
   .card-elevated {
-    @apply glass-elevated rounded-2xl p-8 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-300;
+    @apply glass-elevated rounded-3xl p-10 hover:shadow-[0_12px_48px_rgba(0,0,0,0.9)] transition-all duration-500;
   }
 
   .card-interactive {
-    @apply glass-interactive rounded-2xl p-6 cursor-pointer;
+    @apply glass-interactive rounded-3xl p-8 cursor-pointer;
   }
 
   .card-material {
-    @apply bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300;
+    @apply bg-gradient-to-b from-white/[0.03] to-transparent backdrop-blur-xl border border-white/[0.05] rounded-3xl p-8 hover:border-white/[0.1] transition-all duration-500;
   }
 
   /* Section styles */
   .section {
-    @apply min-h-screen py-20 px-4 md:px-8 lg:px-16;
+    @apply min-h-screen py-24 px-6 md:px-12 lg:px-24;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text font-display;
+    @apply text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 gradient-text font-display;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto;
+    @apply text-xl md:text-2xl text-kenesis-mutetext font-light tracking-wide mb-16 max-w-3xl mx-auto;
   }
 
   /* Skill bar */
   .skill-bar {
-    @apply h-3 rounded-full bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-500 transition-all duration-1000 ease-out;
+    @apply h-1.5 rounded-full bg-white transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(255,255,255,0.3)];
   }
 
   .skill-bar-container {
-    @apply w-full h-3 bg-gray-800 rounded-full overflow-hidden;
+    @apply w-full h-1.5 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm;
   }
 }
 
 @layer utilities {
   .text-shadow {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   }
 
   .text-shadow-glow {
-    text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   }
 
-  /* Glitch effect */
+  /* subtle glitch replaced by slick glow */
   .glitch {
     position: relative;
-    animation: glitch 3s infinite;
   }
 
   .glitch[data-text]::before,

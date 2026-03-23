@@ -4,49 +4,83 @@ import { FiDownload, FiAward, FiBook } from 'react-icons/fi';
 const Resume = () => {
   const experience = [
     {
-      title: 'Secretariat',
+      title: 'AI Engineering Intern',
+      company: 'L&T Technology Services, DLF Cybercity',
+      period: 'Dec 2025 - Feb 2026',
+      description: 'Developed AI-driven solutions integrating APIs, Frontend-backend systems, and Workflow automation.',
+      technologies: ['AI', 'APIs', 'Frontend', 'Backend', 'Workflow Automation'],
+    },
+    {
+      title: 'Secretary',
       company: 'IEEE SOCIETY - Rajalakshmi Engineering College',
       period: 'Aug 2025 - Present',
-      description: 'Managed documentation, coordinated meetings, and facilitated communication among members to ensure smooth operations of the IEEE student chapter.',
-      technologies: ['Documentation', 'Communication', 'Event Management', 'Team Coordination'],
+      description: 'Managed documentation, coordinated meetings, and facilitated communication among members.',
+      technologies: ['Leadership', 'Documentation', 'Communication'],
     },
     {
       title: 'Event Management Lead',
       company: 'PHOENIX CLUB - Rajalakshmi Engineering College',
+      period: 'Aug 2025 - Present',
+      description: 'Led planning and execution of college events, supervising teams and timelines.',
+      technologies: ['Event Planning', 'Team Management', 'Leadership'],
+    },
+    {
+      title: 'Event Management Junior Associate',
+      company: 'IEEE CIS SOCIETY - Rajalakshmi Engineering College',
       period: 'Oct 2024 - Aug 2025',
-      description: 'Led planning and execution of college events, supervising teams and timelines. Assisted in organizing technical events, coordinating logistics, and ensuring smooth execution.',
-      technologies: ['Leadership', 'Event Planning', 'Team Management', 'Logistics'],
+      description: 'Assisted in organizing technical events, coordinating logistics, and ensuring smooth execution.',
+      technologies: ['Event Setup', 'Logistics Strategy'],
     },
     {
       title: 'Internship Trainee',
-      company: 'Multiple Organizations',
-      period: 'Nov 2024 - Mar 2025',
-      description: 'Gained hands-on experience in Cloud Computing, IoT, and real-time sensor data projects across various companies including tech startups and established firms.',
-      technologies: ['Cloud Computing', 'IoT', 'Python', 'Arduino', 'Sensor Integration'],
+      company: 'National Institute Of Technology, Silchar',
+      period: 'Jan 2025 - Mar 2025',
+      description: 'Implemented AI/ML models for medical imaging projects.',
+      technologies: ['AI', 'Machine Learning', 'Medical Imaging'],
     },
+    {
+      title: 'Internship Trainee',
+      company: 'InternEzy',
+      period: 'Nov 2024 - Jan 2025',
+      description: 'Gained hands-on experience in Cloud Computing with AWS, focusing on deployment and services.',
+      technologies: ['Cloud Computing', 'AWS', 'Deployment'],
+    },
+    {
+      title: 'Internship Trainee',
+      company: 'ReTech Solutions Pvt. Limited, Chennai',
+      period: 'Dec 2024 - Dec 2024',
+      description: 'Worked on IoT and real-time sensor data projects.',
+      technologies: ['IoT', 'Real-time Data', 'Sensors'],
+    }
   ];
 
   const education = [
     {
-      degree: 'Bachelor of Technology in Artificial Intelligence & Machine Learning',
+      degree: 'B.Tech Artificial Intelligence & Machine Learning',
       institution: 'Rajalakshmi Engineering College, Chennai',
       period: 'September 2023 - Present',
-      description: 'CGPA: 8.53. Focusing on fundamentals and advancement of Artificial Intelligence, Machine Learning, Deep Learning, and their integration across various domains.',
+      description: 'CGPA: 8.52',
     },
     {
       degree: 'Higher Secondary (XII)',
       institution: 'Christ The King Matric Boys Higher Secondary School, Kumbakonam',
       period: 'July 2022 - April 2023',
-      description: 'Scored 92.83% with focus on Mathematics and Computer Science.',
+      description: 'Percentage: 92.83%',
+    },
+    {
+      degree: 'Secondary (X)',
+      institution: 'Christ The King Matric Boys Higher Secondary School, Kumbakonam',
+      period: 'June 2020 - April 2021',
+      description: 'Percentage: 89%',
     },
   ];
 
   const certifications = [
-    'Nptel Certification (2025) - Completed 3+ Nptel courses & received Gold Badge',
-    'Paper Presentation (2025) - "LMS Using Generative AI" at Chennai Institute of Technology',
-    'Paper Presentation (2023) - "Pneumonia Detection with VIT+MC Dropout" at VFSTR University',
-    'Hackathon Winner (2024) - 2nd Prize Winner at IEEE Breadboard Hackathon',
-    'Newsletter Contributor (2025) - Content creator & Editor for AI/ML dept. newsletter at REC',
+    'Fortinet Certification (2026): Earned Fortinet Certified Fundamentals & Fortinet Certified Associate in Fortinet Training Institute (Cybersecurity).',
+    'Paper Presentation (2025): Presented a paper on "LMS Using Generative AI" at Chennai Institute of Technology with a team of 3.',
+    'Nptel Certification(2025): Completed 3+ Nptel courses & received one Gold Badge.',
+    'Paper Presentation (2025): Presented a paper on "Pneumonia Detection with VIT+MC Dropout" at VFSTR University via online.',
+    'Hackathon Winner(2024): 2nd Prize winner, IEEE Breadths hackathon under the theme "Environmental monitoring" with a team of 4.',
   ];
 
   const handleDownloadResume = () => {

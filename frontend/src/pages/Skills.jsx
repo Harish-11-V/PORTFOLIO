@@ -24,27 +24,31 @@ const Skills = () => {
   };
 
   const sampleSkills = [
-    { _id: '1', name: 'React.js', category: 'Frontend Development', proficiency: 90 },
-    { _id: '2', name: 'JavaScript', category: 'Frontend Development', proficiency: 88 },
-    { _id: '3', name: 'HTML & CSS', category: 'Frontend Development', proficiency: 92 },
-    { _id: '4', name: 'Python', category: 'Frontend Development', proficiency: 90 },
-    { _id: '5', name: 'Java', category: 'Frontend Development', proficiency: 85 },
-    { _id: '6', name: 'C Programming', category: 'Frontend Development', proficiency: 82 },
-    { _id: '7', name: 'Node.js', category: 'Backend Development', proficiency: 85 },
-    { _id: '8', name: 'MongoDB', category: 'Backend Development', proficiency: 88 },
-    { _id: '9', name: 'MySQL', category: 'Backend Development', proficiency: 80 },
-    { _id: '10', name: 'Git & GitHub', category: 'Backend Development', proficiency: 87 },
-    { _id: '11', name: 'TensorFlow', category: 'Backend Development', proficiency: 83 },
-    { _id: '12', name: 'PyTorch', category: 'Backend Development', proficiency: 82 },
-    { _id: '13', name: 'Arduino & IoT', category: 'Backend Development', proficiency: 78 },
-    { _id: '14', name: 'OpenCV', category: 'Backend Development', proficiency: 80 },
+    { _id: '1', name: 'React Js', category: 'Programming & Web Dev', proficiency: 90 },
+    { _id: '2', name: 'JavaScript', category: 'Programming & Web Dev', proficiency: 88 },
+    { _id: '3', name: 'HTML & CSS', category: 'Programming & Web Dev', proficiency: 92 },
+    { _id: '4', name: 'Python', category: 'Programming & Web Dev', proficiency: 90 },
+    { _id: '5', name: 'Java', category: 'Programming & Web Dev', proficiency: 85 },
+    { _id: '6', name: 'C', category: 'Programming & Web Dev', proficiency: 82 },
+    { _id: '7', name: 'API Handling', category: 'Programming & Web Dev', proficiency: 85 },
+    { _id: '8', name: 'Frontend (UI)', category: 'Programming & Web Dev', proficiency: 88 },
+    { _id: '10', name: 'Git & GitHub', category: 'Tools & Automation', proficiency: 87 },
+    { _id: '11', name: 'VS Code', category: 'Tools & Automation', proficiency: 90 },
+    { _id: '12', name: 'UiPath Studio', category: 'Tools & Automation', proficiency: 82 },
+    { _id: '13', name: 'Canva', category: 'Tools & Automation', proficiency: 85 },
+    { _id: '14', name: 'Team Leadership', category: 'Soft Skills', proficiency: 90 },
+    { _id: '15', name: 'Adaptability', category: 'Soft Skills', proficiency: 85 },
+    { _id: '16', name: 'Time Management', category: 'Soft Skills', proficiency: 85 },
   ];
 
-  const frontendSkills = skills.filter(s => 
-    s.category === 'Frontend Development' || s.category === 'Frontend'
+  const programmingSkills = skills.filter(s => 
+    s.category === 'Programming & Web Dev' || s.category === 'Frontend Development' || s.category === 'Backend Development'
   );
-  const backendSkills = skills.filter(s => 
-    s.category === 'Backend Development' || s.category === 'Backend'
+  const toolsSkills = skills.filter(s => 
+    s.category === 'Tools & Automation' || s.category === 'Tools'
+  );
+  const softSkills = skills.filter(s => 
+    s.category === 'Soft Skills'
   );
 
   if (loading) {
@@ -72,8 +76,8 @@ const Skills = () => {
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Frontend Development */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Programming & Web Dev */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -83,31 +87,51 @@ const Skills = () => {
               <div className="w-14 h-14 rounded-full bg-primary-500/20 backdrop-blur-sm flex items-center justify-center border border-primary-500/30">
                 <FaCode className="text-2xl text-primary-400" />
               </div>
-              <h2 className="text-2xl font-bold text-white">Frontend Development</h2>
+              <h2 className="text-2xl font-bold text-white">Programming & Web Dev</h2>
             </div>
             
             <div className="space-y-5">
-              {frontendSkills.map((skill, index) => (
+              {programmingSkills.map((skill, index) => (
                 <SkillBar key={skill._id} skill={skill} index={index} />
               ))}
             </div>
           </motion.div>
 
-          {/* Backend Development */}
+          {/* Tools & Automation */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="w-14 h-14 rounded-full bg-primary-500/20 backdrop-blur-sm flex items-center justify-center border border-primary-500/30">
                 <FaServer className="text-2xl text-primary-400" />
               </div>
-              <h2 className="text-2xl font-bold text-white">Backend Development</h2>
+              <h2 className="text-2xl font-bold text-white">Tools & Automation</h2>
             </div>
             
             <div className="space-y-5">
-              {backendSkills.map((skill, index) => (
+              {toolsSkills.map((skill, index) => (
+                <SkillBar key={skill._id} skill={skill} index={index} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Soft Skills */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-full bg-primary-500/20 backdrop-blur-sm flex items-center justify-center border border-primary-500/30">
+                <FaServer className="text-2xl text-primary-400" />
+              </div>
+              <h2 className="text-2xl font-bold text-white">Soft Skills</h2>
+            </div>
+            
+            <div className="space-y-5">
+              {softSkills.map((skill, index) => (
                 <SkillBar key={skill._id} skill={skill} index={index} />
               ))}
             </div>

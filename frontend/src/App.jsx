@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <Router>
+      <CustomCursor />
       <div className="min-h-screen relative">
         <ParticleBackground />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
