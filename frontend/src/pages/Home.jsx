@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiCode, FiZap } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Tilt } from 'react-tilt';
 import MagneticButton from '../components/MagneticButton';
 import GlitchText from '../components/GlitchText';
 import Counter from '../components/Counter';
+import ScrollIndicator from '../components/ScrollIndicator';
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -177,60 +179,77 @@ const Home = () => {
             </span>
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 px-2">
-            <motion.div
-              variants={itemVariants}
-              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors"
-            >
-              <Counter 
-                end={15} 
-                duration={2.5} 
-                suffix="+" 
-                className="text-3xl md:text-4xl font-bold text-purple-400 mb-2"
-              />
-              <p className="text-sm md:text-base text-gray-400">Projects Completed</p>
-            </motion.div>
+            <Tilt options={{ max: 20, scale: 1.05, speed: 400 }}>
+              <motion.div
+                variants={itemVariants}
+                className="h-full glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors border border-white/5 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Counter 
+                  end={15} 
+                  duration={2.5} 
+                  suffix="+" 
+                  className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 relative z-10"
+                />
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Projects Completed</p>
+              </motion.div>
+            </Tilt>
 
-            <motion.div
-              variants={itemVariants}
-              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors"
-            >
-              <Counter 
-                end={20} 
-                duration={2.5} 
-                suffix="+" 
-                className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2"
-              />
-              <p className="text-sm md:text-base text-gray-400">Technologies Mastered</p>
-            </motion.div>
+            <Tilt options={{ max: 20, scale: 1.05, speed: 400 }}>
+              <motion.div
+                variants={itemVariants}
+                className="h-full glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors border border-white/5 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-bl from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Counter 
+                  end={20} 
+                  duration={2.5} 
+                  suffix="+" 
+                  className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2 relative z-10"
+                />
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Technologies Mastered</p>
+              </motion.div>
+            </Tilt>
 
-            <motion.div
-              variants={itemVariants}
-              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors"
-            >
-              <Counter 
-                end={3} 
-                duration={2} 
-                suffix=" Yrs" 
-                className="text-3xl md:text-4xl font-bold text-purple-400 mb-2"
-              />
-              <p className="text-sm md:text-base text-gray-400">Experience</p>
-            </motion.div>
+            <Tilt options={{ max: 20, scale: 1.05, speed: 400 }}>
+              <motion.div
+                variants={itemVariants}
+                className="h-full glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-purple-500/10 transition-colors border border-white/5 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Counter 
+                  end={3} 
+                  duration={2} 
+                  suffix=" Yrs" 
+                  className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 relative z-10"
+                />
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Experience</p>
+              </motion.div>
+            </Tilt>
 
-            <motion.div
-              variants={itemVariants}
-              className="glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors"
-            >
-              <Counter 
-                end={10} 
-                duration={2.5} 
-                suffix="+" 
-                className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2"
-              />
-              <p className="text-sm md:text-base text-gray-400">AI/ML Projects</p>
-            </motion.div>
+            <Tilt options={{ max: 20, scale: 1.05, speed: 400 }}>
+              <motion.div
+                variants={itemVariants}
+                className="h-full glass-interactive p-6 md:p-8 rounded-xl text-center hover:bg-cyan-500/10 transition-colors border border-white/5 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-tl from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Counter 
+                  end={10} 
+                  duration={2.5} 
+                  suffix="+" 
+                  className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2 relative z-10"
+                />
+                <p className="text-sm md:text-base text-gray-400 relative z-10">AI/ML Projects</p>
+              </motion.div>
+            </Tilt>
           </div>
         </motion.div>
       </motion.div>
+      
+      {/* Scroll Indicator at the bottom */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block">
+        <ScrollIndicator />
+      </div>
     </div>
   );
 };

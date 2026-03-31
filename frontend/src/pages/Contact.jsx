@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiUser, FiMessageSquare, FiSend, FiGithub, FiLinkedin, FiCode, FiPhone } from 'react-icons/fi';
 import axios from 'axios';
+import GlitchText from '../components/GlitchText';
+import MagneticButton from '../components/MagneticButton';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,10 +78,8 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold font-display mb-4">
-            Get In <span className="gradient-text">Touch</span>
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <GlitchText text="Get In Touch" className="text-4xl md:text-6xl font-bold font-display mb-4" />
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-4">
             Have a project in mind or just want to chat? Feel free to reach out!
           </p>
         </motion.div>
@@ -233,12 +233,10 @@ const Contact = () => {
                   />
                 </div>
 
-                <motion.button
+                <MagneticButton
                   type="submit"
                   disabled={loading}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg hover:shadow-purple-500/50"
+                  className="group w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] transform-3d"
                 >
                   {loading ? (
                     <>
@@ -252,10 +250,10 @@ const Contact = () => {
                   ) : (
                     <>
                       Send Message
-                      <FiSend className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      <FiSend className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform animate-pulse-slow" />
                     </>
                   )}
-                </motion.button>
+                </MagneticButton>
 
                 {status.message && (
                   <motion.div
