@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiCode } from 'react-icons/fi';
+import MagneticButton from './MagneticButton';
 
 const Footer = () => {
   const socialLinks = [
@@ -88,22 +89,23 @@ const Footer = () => {
             </motion.h4>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`p-3 glass-hover rounded-full text-gray-400 ${social.color} transition-colors`}
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
+                <MagneticButton key={social.label}>
+                  <motion.a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`p-3 glass-hover rounded-full text-gray-400 ${social.color} transition-colors inline-block`}
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                </MagneticButton>
               ))}
             </div>
           </div>

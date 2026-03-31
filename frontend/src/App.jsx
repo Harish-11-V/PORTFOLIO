@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import PageTransition from './components/PageTransition';
+import ScrollProgressBar from './components/ScrollProgressBar';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
@@ -29,6 +30,7 @@ function App() {
   return (
     <Router>
       <CustomCursor />
+      <ScrollProgressBar />
       <div className="min-h-screen relative">
         <ParticleBackground />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />

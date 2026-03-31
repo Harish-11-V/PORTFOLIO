@@ -62,7 +62,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 {location.pathname === item.path && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-400 shadow-[0_0_8px_rgba(168,85,247,0.6)]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
