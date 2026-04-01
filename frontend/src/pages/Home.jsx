@@ -186,12 +186,12 @@ const Home = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Counter 
-                  end={15} 
+                  end={4} 
                   duration={2.5} 
                   suffix="+" 
                   className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 relative z-10"
                 />
-                <p className="text-sm md:text-base text-gray-400 relative z-10">Projects Completed</p>
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Major Projects</p>
               </motion.div>
             </Tilt>
 
@@ -202,12 +202,12 @@ const Home = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-bl from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Counter 
-                  end={20} 
+                  end={15} 
                   duration={2.5} 
                   suffix="+" 
                   className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2 relative z-10"
                 />
-                <p className="text-sm md:text-base text-gray-400 relative z-10">Technologies Mastered</p>
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Technologies Explored</p>
               </motion.div>
             </Tilt>
 
@@ -218,12 +218,12 @@ const Home = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Counter 
-                  end={3} 
+                  end={4} 
                   duration={2} 
-                  suffix=" Yrs" 
+                  suffix="" 
                   className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 relative z-10"
                 />
-                <p className="text-sm md:text-base text-gray-400 relative z-10">Experience</p>
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Internships Done</p>
               </motion.div>
             </Tilt>
 
@@ -234,12 +234,12 @@ const Home = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-tl from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Counter 
-                  end={10} 
+                  end={4} 
                   duration={2.5} 
                   suffix="+" 
                   className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2 relative z-10"
                 />
-                <p className="text-sm md:text-base text-gray-400 relative z-10">AI/ML Projects</p>
+                <p className="text-sm md:text-base text-gray-400 relative z-10">Awards & Papers</p>
               </motion.div>
             </Tilt>
           </div>

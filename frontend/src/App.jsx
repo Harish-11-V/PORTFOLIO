@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
 import ParticleBackground from './components/ParticleBackground';
 import PageTransition from './components/PageTransition';
 import ScrollProgressBar from './components/ScrollProgressBar';
@@ -29,7 +28,6 @@ function App() {
 
   return (
     <Router>
-      <CustomCursor />
       <ScrollProgressBar />
       <div className="min-h-screen relative">
         <ParticleBackground />
